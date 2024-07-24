@@ -13,22 +13,30 @@
         }
         .left {
             flex: 1;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
             padding: 20px;
             box-sizing: border-box;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
         .left img {
             max-width: 70%;
             max-height: 70%;
+        }
+        .left p {
+            margin-top: 10px;
+            font-size: 14px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #333;
         }
         .right {
             flex: 1;
             overflow-y: auto;
             padding: 20px;
             box-sizing: border-box;
-            margin-top: 50px;
+            margin-top: 50px; /* Adjust this value to move the text further down */
         }
         .right a {
             display: block;
@@ -44,11 +52,13 @@
 </head>
 <body>
     <div class="left">
-        <img src="firegod.jpg" alt="Description of image">
+        <div class="image-container">
+             <img src="firegod.jpg" alt="Description of image">
         <p>I am zhu rong, a team member of hungergame. I have taken part in some Chinese hunts and would
            like to participate in more English hunts in the future. But I am still a green hand hunter. I build this web
            in order to propagate the Chinese hunt culture. If you have any qquestions, welcome to contact to me through 745373984@qq.com
         </p>
+        </div>
     </div>
     <div class="right">
         <a href="blog1.html">Blog Post 1</a>
