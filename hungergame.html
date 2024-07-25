@@ -1,5 +1,6 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>团队介绍</title>
@@ -8,6 +9,8 @@
             margin: 0;
             padding: 0;
             display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
             box-sizing: border-box;
             background: url('background.webp') no-repeat center center fixed;
@@ -16,17 +19,22 @@
         .image-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center; /* 居中对齐 */
+            text-align: center; /* 文本居中 */
         }
-        .p {
-            margin-top: 30px;
-            font-size: 14px;
+        .image-container p {
+            font-size: 24px; /* 增大文字 */
             font-family: 'Times New Roman', Times, serif;
             color: #333;
             white-space: pre-wrap;
             background-color: rgba(255, 255, 255, 0.7); /* 半透明背景 */
             padding: 10px;
             border-radius: 5px;
+        }
+        .image-container img {
+            max-width: 50%; /* 缩小图片 */
+            max-height: 50%;
+            margin-top: 20px; /* 增加图片与文字之间的间距 */
         }
     </style>
 </head>
