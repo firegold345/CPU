@@ -34,6 +34,24 @@
               font-family: 'SimSun', '宋体', serif;
               text-indent: 2em; /* 设置首行缩进 */
            }
+           .footer {
+            background-color: gray; /* 底栏背景色为灰色 */
+            color: white; /* 字体颜色为白色 */
+            padding: 10px 20px; /* 内边距 */
+            text-align: left; /* 左对齐 */
+            box-sizing: border-box;
+            position: relative; /* 使底栏可以固定在底部 */
+            bottom: 0;
+            width: 100%; /* 使底栏宽度为页面宽度 */
+        }
+        .footer a {
+            color: white; /* 链接颜色为白色 */
+            text-decoration: none; /* 移除下划线 */
+            font-size: 18px; /* 链接字体大小 */
+        }
+        .footer a:hover {
+            text-decoration: underline; /* 鼠标悬停时显示下划线 */
+        }
       </style>
    </head>
    <body>
@@ -54,6 +72,9 @@
              事实上，上面这个例子出现在LGPH2的一题中，所关联的信息库是美国电影协会世纪百句经典台词。
              而《乱世佳人》名列第一。当然，在那道题的ft中，存在着指向这个信息库的暗示。
           </p>
+          <div class="footer">
+             <a href="index.html">目录</a>
+          </div>
        </div>
    </body>
 </html>
