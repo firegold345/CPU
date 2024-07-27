@@ -9,29 +9,35 @@
               margin: 0;
               padding: 0;
               display: flex;
+              flex-direction: column; /* 使子元素垂直排列 */
+              align-items: center; /* 水平居中对齐 */
+              height: 100vh;
               box-sizing: border-box;
               background-color: black;
               color: white;
               font-family: 'STXinwei', '华文新魏', sans-serif;
            }
            .centered-heading {
-              justify-content: center; /* 水平居中 */
-              align-items: flex-start; /* 垂直靠上 */
-              height: 100vh;
               text-align: center; /* 使标题居中 */
               margin-top: 20px; /* 根据需要调整距离顶部的距离 */
            }
-           .centered-heading p {
-              margin: 0; /* 移除段落的默认边距 */
-              font-size: 14px; /* 调整字体大小 */
-              text-align: left;
+           .centered-heading h1 {
+              margin: 0; /* 移除标题的默认边距 */
+           }
+           .content {
+              width: 100%; /* 使内容宽度占据全屏 */
+              text-align: left; /* 内容左对齐 */
+              padding: 0 20px; /* 增加左右内边距以避免内容紧贴屏幕边缘 */
+              box-sizing: border-box; /* 包括内边距在宽度计算中 */
            }
       </style>
    </head>
    <body>
        <div class="centered-heading">
             <h1>信息库关联</h1>
-            <p>aaaa</p >
+       </div>
+       <div class="content">
+            <p>aaaa</p>
        </div>
    </body>
 </html>
