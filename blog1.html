@@ -58,6 +58,22 @@
         .footer a:hover {
             opacity: 0.8; /* 鼠标悬停时的透明效果 */
         }
+        table {
+            width: 90%;
+            border-collapse: collapse; /* 合并边框 */
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 轻微阴影效果 */
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd; /* 边框颜色 */
+            text-align: left; /* 文本左对齐 */
+        }
+        th {
+            background-color: #0d6efd; /* 表头背景色 */
+            color: white; /* 表头字体颜色 */
+        }
       </style>
    </head>
    <body>
@@ -86,5 +102,25 @@
              <a href="blog2.html">下一篇</a>
           </div>
        </div>
+      <table>
+        <thead>
+            <tr>
+                <th>clue</th>
+                <th>直接结果</th>
+                <th>英文翻译</th>
+                <th>上映时间</th>
+                <th>排名</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>坦白地说，亲爱的，我不在乎。</td>
+                <td>《乱世佳人》</td>
+                <td>Gone with the wind</td>
+                <td>1939</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
    </body>
 </html>
