@@ -1,0 +1,19 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>输入页面</title>
+   </head>
+   <h1>输入答案</h1>
+    <input type="text" id="userInput" placeholder="请输入答案">
+    <button onclick="submitAnswer()">提交</button>
+
+    <script>
+        function submitAnswer() {
+            const input = document.getElementById('userInput').value;
+            // 将输入内容保存到localStorage
+            localStorage.setItem('userAnswer', input);
+            // 跳转到结果页面
+            window.location.href = 'result.html';
+        }
+    </script>
+</html>
