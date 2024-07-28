@@ -11,15 +11,22 @@
             padding: 0;
             height: 100vh;
             display: flex;
-            flex-direction: column; /* 将主轴方向设为列 */
-            align-items: flex-start; /* 左对齐 */
-            justify-content: flex-start; /* 顶部对齐 */
+            flex-direction: column; /* 主轴方向设为列 */
             font-family: Arial, sans-serif;
         }
-        .content {
-            padding: 20px;
-            font-size: 50px;
+
+        .top-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* 左对齐 */
+            color: white;
         }
+
+        .top-content p {
+            font-size: 50px;
+            margin: 0;
+        }
+
         .container {
             display: flex;
             align-self: flex-end; /* 将容器放置在右下角 */
@@ -75,10 +82,10 @@
     </style>
 </head>
 <body>
-    <div class="content">
+    <div class="top-content">
         <p>#01 书法考试</p>
+        <img src="01.png" alt="Description of image">
     </div>
-    <img src="01.jpg" alt="Description of image">
     <div class="container">
         <div class="box" onclick="openModal('提示内容')">提示</div>
         <div class="box" onclick="openModal('答案内容')">答案</div>
