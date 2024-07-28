@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结果页面</title>
+</head>
+<body>
+    <h1>验证结果</h1>
+    <p id="result"></p>
+    <button onclick="goBack()">返回</button>
+
+    <script>
+        // 获取存储的答案
+        const userAnswer = localStorage.getItem('userAnswer');
+        const correctAnswer = "42";
+        const resultElement = document.getElementById('result');
+
+        // 判断答案是否正确
+        if (userAnswer === correctAnswer) {
+            resultElement.textContent = "答案正确";
+        } else {
+            resultElement.textContent = "答案错误";
+        }
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
