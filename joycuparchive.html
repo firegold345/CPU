@@ -11,17 +11,20 @@
             padding: 0;
             height: 100vh;
             display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
+            flex-direction: column; /* 将主轴方向设为列 */
+            align-items: flex-start; /* 左对齐 */
+            justify-content: flex-start; /* 顶部对齐 */
             font-family: Arial, sans-serif;
         }
-        .content{
-            display: flex;
+        .content {
             padding: 20px;
             font-size: 50px;
         }
         .container {
             display: flex;
+            align-self: flex-end; /* 将容器放置在右下角 */
+            margin-top: auto; /* 将容器推到底部 */
+            padding: 10px;
         }
 
         .box {
@@ -73,7 +76,7 @@
 </head>
 <body>
     <div class="content">
-    <p>#01 书法考试</p>
+        <p>#01 书法考试</p>
     </div>
     <img src="01.jpg" alt="Description of image">
     <div class="container">
