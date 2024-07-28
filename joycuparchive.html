@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深灰色框示例</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .box {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick="showAlert('提示')">提示</div>
+        <div class="box" onclick="showAlert('答案')">答案</div>
+        <div class="box" onclick="showAlert('解析')">解析</div>
+    </div>
+
+    <script>
+        function showAlert(message) {
+            alert(message);
+        }
+    </script>
+</body>
+</html>
