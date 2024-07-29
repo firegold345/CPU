@@ -91,6 +91,17 @@
         }
 
         /* 修改按钮样式 */
+        .modal-line {
+            margin-bottom: 20px;
+        }
+
+        .modal-line-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* 使按钮和文本分开对齐 */
+            margin-bottom: 10px;
+        }
+
         .modal-line button {
             background-color: grey; /* 按钮背景色设为灰色 */
             color: white; /* 字体颜色设为白色 */
@@ -98,16 +109,11 @@
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
-            float: right; /* 右对齐 */
             font-size: 20px;
-            margin: 20px;
         }
 
         .modal-line button:hover {
             background-color: #666; /* 悬停时按钮颜色 */
-        }
-         .modal-line {
-            line-height: 25px;
         }
     </style>
 </head>
@@ -129,23 +135,30 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <div class="modal-line" id="tipLine">
-                <span id="tipText1">提示内容行1</span>
-                <button onclick="showContent('tipContent1')">显示更多</button>
-                <p id="tipContent1" style="display:none;">这是提示行1的详细内容。</p >
-                <br>
-                <span id="tipText2">提示内容行2</span>
-                <button onclick="showContent('tipContent2')">显示更多</button>
-                <p id="tipContent2" style="display:none;">这是提示行2的详细内容。</p >
+                <div class="modal-line-content">
+                    <span id="tipText1">提示内容行1</span>
+                    <button onclick="showContent('tipContent1')">显示更多</button>
+                </div>
+                <p id="tipContent1" style="display:none;">这是提示行1的详细内容。</p>
+                <div class="modal-line-content">
+                    <span id="tipText2">提示内容行2</span>
+                    <button onclick="showContent('tipContent2')">显示更多</button>
+                </div>
+                <p id="tipContent2" style="display:none;">这是提示行2的详细内容。</p>
             </div>
             <div class="modal-line" id="answerLine">
-                <span id="answerText">答案内容</span>
-                <button onclick="showContent('answerContent')">显示更多</button>
-                <p id="answerContent" style="display:none;">这是答案的详细内容。</p >
+                <div class="modal-line-content">
+                    <span id="answerText">答案内容</span>
+                    <button onclick="showContent('answerContent')">显示更多</button>
+                </div>
+                <p id="answerContent" style="display:none;">这是答案的详细内容。</p>
             </div>
             <div class="modal-line" id="explanationLine">
-                <span id="explanationText">解析内容</span>
-                <button onclick="showContent('explanationContent')">显示更多</button>
-                <p id="explanationContent" style="display:none;">这是解析的详细内容。</p >
+                <div class="modal-line-content">
+                    <span id="explanationText">解析内容</span>
+                    <button onclick="showContent('explanationContent')">显示更多</button>
+                </div>
+                <p id="explanationContent" style="display:none;">这是解析的详细内容。</p>
             </div>
         </div>
     </div>
