@@ -88,7 +88,16 @@
           font-weight: 800;
           margin: 20px 0;
          }
+        .gradientText {
 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    background-position: 0%;
+    font-family: "title";
+    animation: backgroundSizeAnimation 10s ease-in-out infinite;
+      background-image:  var(--gradient);
+       }
     </style>
 </head>
 <body>
