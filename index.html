@@ -19,17 +19,29 @@
             background-position: center;
             background-attachment: fixed;
         }
-	      @keyframes backgroundSizeAnimation {
-            0% {
-                background-size: 100%;
-            }
-            50% {
-                background-size: 120%;
-            }
-            100% {
-                background-size: 100%;
-            }
-        }
+	    @keyframes backgroundSizeAnimation {
+    0% {
+        background-position: 100%;
+    }
+
+    25% {
+        background-position: 50%;
+    }
+
+    50% {
+        background-position: 0%;
+    }
+
+    75% {
+        background-position: 50%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+
+}
+
            .blur-overlay {
             position: absolute;
             top: 0;
