@@ -28,11 +28,11 @@
             margin: 0;
             color: white;
         }
-        .top-content p{
+        .top-content p {
             margin-top: 30px;
             color: white;
         }
-        .top-content img{
+        .top-content img {
             max-width: 55%;
             max-height: 55%;
         }
@@ -95,11 +95,14 @@
 
         /* 修改按钮样式 */
         .modal-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* 确保按钮右对齐 */
             margin-bottom: 20px;
         }
 
         .modal-line-content {
-            margin-bottom: 10px;
+            flex: 1; /* 使内容部分占用可用空间 */
         }
 
         .modal-line button {
@@ -110,7 +113,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 20px;
-            margin-top: 10px; /* 上方间距 */
+            margin-left: 20px; /* 按钮左侧间距 */
         }
 
         .modal-line button:hover {
