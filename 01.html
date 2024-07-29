@@ -104,7 +104,6 @@
             cursor: pointer;
         }
 
-        /* 修改按钮样式 */
         .modal-line {
             display: flex;
             justify-content: space-between; /* 确保内容和按钮在两侧 */
@@ -150,13 +149,13 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <div class="modal-line" id="tipLine1">
+            <div class="modal-line" id="tipLine">
                 <div class="modal-line-content">
-                    <span id="tipText1">本题提示</span>
+                    <span id="tipText">本题提示</span>
                 </div>
-                <button onclick="showContent('tipContent1')">显示</button>
+                <button onclick="showContent('tipContent')">显示</button>
             </div>
-            <p id="tipContent1" style="display:none;">田字格上面的四线格里一般放什么呢？诶这个笔画数好像刚好的什么的个数一样？</p>
+            <p id="tipContent" style="display:none;">田字格上面的四线格里一般放什么呢？诶这个笔画数好像刚好的什么的个数一样？</p>
             <div class="modal-line" id="answerLine">
                 <div class="modal-line-content">
                     <span id="answerText">本题答案</span>
@@ -177,13 +176,16 @@
     <script>
         function openModal(type) {
             // 隐藏所有行
-            document.getElementById('tipLine1').style.display = "none";
+            document.getElementById('tipLine').style.display = "none";
+            document.getElementById('tipContent').style.display = "none";
             document.getElementById('answerLine').style.display = "none";
+            document.getElementById('answerContent').style.display = "none";
             document.getElementById('explanationLine').style.display = "none";
+            document.getElementById('explanationContent').style.display = "none";
 
             // 根据类型显示对应行
             if (type === '提示') {
-                document.getElementById('tipLine1').style.display = "flex";
+                document.getElementById('tipLine').style.display = "flex";
             } else if (type === '答案') {
                 document.getElementById('answerLine').style.display = "flex";
             } else if (type === '解析') {
