@@ -19,6 +19,14 @@
             background-position: center;
             background-attachment: fixed;
         }
+        .blur-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px); /* 背景模糊效果 */
+        }
         .left {
             flex: 1;
             padding: 20px;
@@ -73,6 +81,7 @@
     </style>
 </head>
 <body>
+    <div class="blur-overlay"></div>
     <div class="left">
         <div class="image-container">
             <img src="firegod.jpg" alt="Description of image">
