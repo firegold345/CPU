@@ -142,45 +142,49 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <div class="modal-line" id="tipLine">
+            <div class="modal-line" id="tipLine1">
                 <div class="modal-line-content">
                     <span id="tipText1">提示内容行1</span>
                 </div>
                 <button onclick="showContent('tipContent1')">显示更多</button>
-                <p id="tipContent1" style="display:none;">这是提示行1的详细内容。</p>
+            </div>
+            <p id="tipContent1" style="display:none;">这是提示行1的详细内容。</p>
+            <div class="modal-line" id="tipLine2">
                 <div class="modal-line-content">
                     <span id="tipText2">提示内容行2</span>
                 </div>
                 <button onclick="showContent('tipContent2')">显示更多</button>
-                <p id="tipContent2" style="display:none;">这是提示行2的详细内容。</p>
             </div>
+            <p id="tipContent2" style="display:none;">这是提示行2的详细内容。</p>
             <div class="modal-line" id="answerLine">
                 <div class="modal-line-content">
                     <span id="answerText">答案内容</span>
                 </div>
                 <button onclick="showContent('answerContent')">显示更多</button>
-                <p id="answerContent" style="display:none;">这是答案的详细内容。</p>
             </div>
+            <p id="answerContent" style="display:none;">这是答案的详细内容。</p>
             <div class="modal-line" id="explanationLine">
                 <div class="modal-line-content">
                     <span id="explanationText">解析内容</span>
                 </div>
                 <button onclick="showContent('explanationContent')">显示更多</button>
-                <p id="explanationContent" style="display:none;">这是解析的详细内容。</p>
             </div>
+            <p id="explanationContent" style="display:none;">这是解析的详细内容。</p>
         </div>
     </div>
 
     <script>
         function openModal(type) {
             // 隐藏所有行
-            document.getElementById('tipLine').style.display = "none";
+            document.getElementById('tipLine1').style.display = "none";
+            document.getElementById('tipLine2').style.display = "none";
             document.getElementById('answerLine').style.display = "none";
             document.getElementById('explanationLine').style.display = "none";
 
             // 根据类型显示对应行
             if (type === '提示') {
-                document.getElementById('tipLine').style.display = "flex";
+                document.getElementById('tipLine1').style.display = "flex";
+                document.getElementById('tipLine2').style.display = "flex";
             } else if (type === '答案') {
                 document.getElementById('answerLine').style.display = "flex";
             } else if (type === '解析') {
