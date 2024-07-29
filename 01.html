@@ -96,8 +96,8 @@
         /* 修改按钮样式 */
         .modal-line {
             display: flex;
-            align-items: center;
-            justify-content: space-between; /* 确保按钮右对齐 */
+            justify-content: space-between; /* 确保内容和按钮在两侧 */
+            align-items: center; /* 垂直居中 */
             margin-bottom: 20px;
         }
 
@@ -113,11 +113,15 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 20px;
-            margin-left: 20px; /* 按钮左侧间距 */
         }
 
         .modal-line button:hover {
             background-color: #666; /* 悬停时按钮颜色 */
+        }
+
+        /* 新增样式保证弹窗内容在关闭按钮下方 */
+        .modal-content > .modal-line {
+            margin-top: 50px; /* 根据需要调整 */
         }
     </style>
 </head>
@@ -176,11 +180,11 @@
 
             // 根据类型显示对应行
             if (type === '提示') {
-                document.getElementById('tipLine').style.display = "block";
+                document.getElementById('tipLine').style.display = "flex";
             } else if (type === '答案') {
-                document.getElementById('answerLine').style.display = "block";
+                document.getElementById('answerLine').style.display = "flex";
             } else if (type === '解析') {
-                document.getElementById('explanationLine').style.display = "block";
+                document.getElementById('explanationLine').style.display = "flex";
             }
 
             // 显示模态窗口
