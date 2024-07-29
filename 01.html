@@ -52,6 +52,17 @@
             cursor: pointer;
         }
 
+        .back-button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+        }
+
         /* 弹窗样式 */
         .modal {
             display: none; /* 默认隐藏 */
@@ -118,19 +129,15 @@
         .modal-line button:hover {
             background-color: #666; /* 悬停时按钮颜色 */
         }
-
-        /* 新增样式保证弹窗内容在关闭按钮下方 */
-        .modal-content > .modal-line {
-            margin-top: 50px; /* 根据需要调整 */
-        }
     </style>
 </head>
 <body>
     <div class="top-content">
         <h1>#01《“永”书》</h1>
-        <p>“这题和去年那道好像啊……</p>
+        <p>“这题和去年那道好像啊……”</p>
         <p>“过往的、现在的事或人，不都是值得我们珍惜的存在吗？”</p>
         <img src="01.jpg" alt="Description of image">
+        <a href="index.html" class="back-button">回到导航页面</a>
     </div>
     <div class="container">
         <div class="box" onclick="openModal('提示')">提示</div>
