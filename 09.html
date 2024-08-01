@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一轮第九题</title>
+    <style>
+        body {
+            background: black;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* 主轴方向设为列 */
+            font-family: Arial, sans-serif;
+        }
+
+        .top-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* 左对齐 */
+            color: white;
+            padding: 20px;
+        }
+
+        .top-content h1 {
+            font-size: 30px;
+            margin: 0;
+            color: white;
+        }
+        .top-content p {
+            margin-top: 10px;
+            color: white;
+        }
+        .top-content img {
+            max-width: 55%;
+            max-height: 55%;
+        }
+        .container {
+            display: flex;
+            align-self: flex-end; /* 将容器放置在右下角 */
+            margin-top: auto; /* 将容器推到底部 */
+            padding: 10px;
+        }
+
+        .box {
+            background-color: #555;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button {
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* 弹窗样式 */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* 黑色背景透明度 */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% 从顶部偏移 */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px; /* 最大宽度 */
+            border-radius: 10px;
+            font-size: 20px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-line {
+            display: flex;
+            justify-content: space-between; /* 确保内容和按钮在两侧 */
+            align-items: center; /* 垂直居中 */
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-line-content {
+            flex: 1; /* 使内容部分占用可用空间 */
+        }
+
+        .modal-line button {
+            background-color: grey; /* 按钮背景色设为灰色 */
+            color: white; /* 字体颜色设为白色 */
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .modal-line button:hover {
+            background-color: #666; /* 悬停时按钮颜色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-content">
+        <h1>#09《晕影月华》</h1>
+        <p>“那是许多年前的一个晚上，我和我的地理老师一同开始观测月相，后来只留下了这份数据。回想起来，那真是一个美好的月份之始……”</p>
+        <img src="09.png"> 
+      <a href="joycuparchive.html" class="back-button">回到导航页面</a>
+    </div>
+    <div class="container">
+        <div class="box" onclick="openModal('提示')">提示</div>
+        <div class="box" onclick="openModal('答案')">答案</div>
+        <div class="box" onclick="openModal('解析')">解析</div>
+    </div>
+
+    <!-- 弹窗 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-line" id="tipLine">
+                <div class="modal-line-content">
+                    <span id="tipText">本题提示</span>
+                </div>
+                <button onclick="showContent('tipContent')">显示</button>
+            </div>
+            <p id="tipContent" style="display:none;">观察过月相变化的顺序吗？这只是排序题而已哦</p>
+            <div class="modal-line" id="answerLine">
+                <div class="modal-line-content">
+                    <span id="answerText">本题答案</span>
+                </div>
+                <button onclick="showContent('answerContent')">显示</button>
+            </div>
+            <p id="answerContent" style="display:none;">airsick</p>
+            <div class="modal-line" id="explanationLine">
+                <div class="modal-line-content">
+                    <span id="explanationText">本题解析</span>
+                </div>
+                <button onclick="showContent('explanationContent')">显示</button>
+            </div>
+            <p id="explanationContent" style="display:none;">暂无</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(type) {
+            // 隐藏所有行
+            document.getElementById('tipLine').style.display = "none";
+            document.getElementById('tipContent').style.display = "none";
+            document.getElementById('answerLine').style.display = "none";
+            document.getElementById('answerContent').style.display = "none";
+            document.getElementById('explanationLine').style.display = "none";
+            document.getElementById('explanationContent').style.display = "none";
+
+            // 根据类型显示对应行
+            if (type === '提示') {
+                document.getElementById('tipLine').style.display = "flex";
+            } else if (type === '答案') {
+                document.getElementById('answerLine').style.display = "flex";
+            } else if (type === '解析') {
+                document.getElementById('explanationLine').style.display = "flex";
+            }
+
+            // 显示模态窗口
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        function showContent(contentId) {
+            var contentElement = document.getElementById(contentId);
+            if (contentElement.style.display === "none") {
+                contentElement.style.display = "block";
+            } else {
+                contentElement.style.display = "none";
+            }
+        }
+
+        // 点击窗口外关闭弹窗
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
