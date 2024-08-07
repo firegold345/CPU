@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一轮第七题</title>
+    <style>
+        body {
+            background: black;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* 主轴方向设为列 */
+            font-family: Arial, sans-serif;
+        }
+
+        .top-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* 左对齐 */
+            color: white;
+            padding: 20px;
+        }
+
+        .top-content h1 {
+            font-size: 30px;
+            margin: 0;
+            color: white;
+        }
+        .top-content p {
+            margin-top: 10px;
+            color: white;
+        }
+        .top-content img {
+            max-width: 55%;
+            max-height: 55%;
+        }
+        .container {
+            display: flex;
+            align-self: flex-end; /* 将容器放置在右下角 */
+            margin-top: auto; /* 将容器推到底部 */
+            padding: 10px;
+        }
+
+        .box {
+            background-color: #555;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button {
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* 弹窗样式 */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* 黑色背景透明度 */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% 从顶部偏移 */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px; /* 最大宽度 */
+            border-radius: 10px;
+            font-size: 20px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-line {
+            display: flex;
+            justify-content: space-between; /* 确保内容和按钮在两侧 */
+            align-items: center; /* 垂直居中 */
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-line-content {
+            flex: 1; /* 使内容部分占用可用空间 */
+        }
+
+        .modal-line button {
+            background-color: grey; /* 按钮背景色设为灰色 */
+            color: white; /* 字体颜色设为白色 */
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .modal-line button:hover {
+            background-color: #666; /* 悬停时按钮颜色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-content">
+        <h1>#7《格物致品质》</h1>
+        <p>“政治试题字好多啊……做题时怎么提关键字呢？” “唉，你多做做题再说吧。”</p>
+        <p>①如今能看到许多同学在课余之际积极锻炼 早睡早起 选择含热量较低的零食 下列说法正确的是（）</p>
+  <p>12.保持身体健康没有成绩重要</p>
+ <p> 16.中学生可以想吃什么就吃什么</p>
+ <p> 25.中学生应有良好的生活习惯</p>
+
+<p>②虹夏是个好孩子 常常帮父母完成各项家务 逢年过节还会用打工挣得的零用钱为父母购买礼品 下列说法不正确的是（）</p>
+<p>  16.孝敬父母是好品德，我们应向她学习</p>
+ <p> 18.帮父母做力所能及的事是应该的</p>
+<p>  40.我们学生有自己的任务，没必要为父母做事</p>
+
+<p>③劳劳经常为班里同学做事 无论是做卫生 查作业 只要交给他 必能保证质量 甚至帮忙做不在自己责任内的事 对劳劳的评价不对的是（）</p>
+<p>  15.劳劳好棒，我们也要帮助他人</p>
+<p>  21.劳劳认真又勤劳，是我们学习的榜样</p>
+<p>  30.劳劳太多管闲事了，鄙视他</p>
+
+<p>④许多同学都乐意和小项相处  你好 谢谢 请 是她常挂在嘴边的话 如果与他人有一点小摩擦 无论必不必需她都会道歉 下列说法正确的是（）</p>
+ <p> 10.我们可以向小项学习她的为人处世</p>
+ <p> 22.小项同学过于虚伪，我们不应学她</p>
+ <p> 43.小项很不礼貌。</p>
+
+<p>⑤即使是再小的测试 阿丹也不会作弊 自己做的事从不逃避责任 数学课上打瞌睡被发现也不会找借口而是承认自己熬夜的 下列说法不正确的是（）</p>
+<p>  4.阿丹太蠢了，给自己找麻烦</p>
+<p>  5.阿丹同学的做法值得表扬</p>
+<p>  31.诚实从来不是一种应当受鄙视的品质</p>
+
+<p>⑥上学路上的彬彬在路口转角处发现一个高年级生提着砖在威胁小朋友 前去赶走了高年级生 关于此事 你的看法是（）</p>
+<p>  11.见义勇为必没好事，自保才是第一位</p>
+<p>  18.彬彬太冲动，遇到此事应该不理他</p>
+<p>22.我们应根据实际情况选择安全的搭救方式</p>
+
+
+<p>⑦小智常常帮助别人 每次同学问她英语题 她都会用工整的字体写下回答 放学路上还会用小零食喂路边的野猫 你认为不对的选项是（）</p>
+ <p> 2.做小小的善事能给身边人带来温暖</p>
+ <p> 15.小智心地善良，我们都很喜欢她</p>
+ <p> 25.别写英语题了，写什么写</p>
+      
+
+      <a href="joycuparchive.html" class="back-button">回到导航页面</a>
+    </div>
+    <div class="container">
+        <div class="box" onclick="openModal('提示')">提示</div>
+        <div class="box" onclick="openModal('答案')">答案</div>
+        <div class="box" onclick="openModal('解析')">解析</div>
+    </div>
+
+    <!-- 弹窗 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-line" id="tipLine">
+                <div class="modal-line-content">
+                    <span id="tipText">本题提示</span>
+                </div>
+                <button onclick="showContent('tipContent')">显示</button>
+            </div>
+            <p id="tipContent" style="display:none;">序号是做什么用的呢？取字吗？诶品质是什么，诚实，勇敢应该都算吧</p>
+            <div class="modal-line" id="answerLine">
+                <div class="modal-line-content">
+                    <span id="answerText">本题答案</span>
+                </div>
+                <button onclick="showContent('answerContent')">显示</button>
+            </div>
+            <p id="answerContent" style="display:none;">proverb</p>
+            <div class="modal-line" id="explanationLine">
+                <div class="modal-line-content">
+                    <span id="explanationText">本题解析</span>
+                </div>
+                <button onclick="showContent('explanationContent')">显示</button>
+            </div>
+            <p id="explanationContent" style="display:none;">暂无</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(type) {
+            // 隐藏所有行
+            document.getElementById('tipLine').style.display = "none";
+            document.getElementById('tipContent').style.display = "none";
+            document.getElementById('answerLine').style.display = "none";
+            document.getElementById('answerContent').style.display = "none";
+            document.getElementById('explanationLine').style.display = "none";
+            document.getElementById('explanationContent').style.display = "none";
+
+            // 根据类型显示对应行
+            if (type === '提示') {
+                document.getElementById('tipLine').style.display = "flex";
+            } else if (type === '答案') {
+                document.getElementById('answerLine').style.display = "flex";
+            } else if (type === '解析') {
+                document.getElementById('explanationLine').style.display = "flex";
+            }
+
+            // 显示模态窗口
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        function showContent(contentId) {
+            var contentElement = document.getElementById(contentId);
+            if (contentElement.style.display === "none") {
+                contentElement.style.display = "block";
+            } else {
+                contentElement.style.display = "none";
+            }
+        }
+
+        // 点击窗口外关闭弹窗
+        window.onclick = function(event) {
+            if (event.targ== document.getElementById('myModal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
